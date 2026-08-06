@@ -34,9 +34,11 @@ const html = readFileSync(resolve(root, 'index.html'), 'utf8');
 for (const value of [
   '<html lang="sv">',
   '<title>Codicent CRM AI',
-  'Mer kundtid.',
-  'Gör nästa steg tydligt',
-  'AI med tydliga gränser',
+  'Kundkortet som håller affären i rörelse.',
+  'Det här får ni',
+  'Aktiviteter och uppföljning',
+  'Offerter, service och dokument',
+  'AI-stöd i rätt sammanhang',
   'mailto:info@codicent.com',
 ]) {
   if (!html.includes(value)) throw new Error('RULE-CONTENT-REQUIRED');
@@ -45,7 +47,7 @@ for (const value of [
 const publishedFiles = actualFiles.filter((file) => file !== 'smoke.mjs');
 const rules = [
   ['RULE-PRIVATE-MARKER', /#(?:data|crmjson|offertjson|customer2)\b/i],
-  ['RULE-TECHNICAL-COPY', /\b(?:mcp|endpoint|tenant|docker|database|server)\b/i],
+  ['RULE-TECHNICAL-COPY', /\b(?:mcp|api|endpoint|tenant|docker|database|server|dynamics|salesforce|infor)\b/i],
   ['RULE-PRIVATE-FILE', /(?:\.env(?:\.[a-z0-9_-]+)?|dockerfile|compose\.ya?ml|credentials?\.json)/i],
   ['RULE-SECRET-ASSIGNMENT', /(?:client[_-]?secret|api[_-]?key|password|authorization)\s*[=:]/i],
   ['RULE-TOKEN-SHAPE', /(?:github_pat_|ghp_|sk-)[a-z0-9_-]{12,}/i],
@@ -55,10 +57,20 @@ const rules = [
   ['RULE-UNIQUE-ID', /\b[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}\b/i],
   ['RULE-REMOTE-URL', /https?:\/\/(?!crm\.codicent\.ai\/?(?:["'\s<]|$))/i],
 ];
+const copyRules = [
+  ['RULE-UNVERIFIED-METRIC', /\b\d+(?:[.,]\d+)?\s*(?:%|x|×)(?=\s|[.,;:!?<]|$)/i],
+  ['RULE-UNVERIFIED-ABSOLUTE', /\b(?:garanterad|alltid|aldrig|automatiskt|realtid|gdpr|krypterad)\b/i],
+];
 for (const file of publishedFiles) {
   const text = readFileSync(resolve(root, file), 'utf8').normalize('NFKC');
   for (const [rule, pattern] of rules) {
     if (pattern.test(text)) throw new Error(`${rule}: ${file}`);
+  }
+  if (file === 'index.html' || file === 'README.md') {
+    const copy = file === 'index.html' ? text.replace(/<style\b[\s\S]*?<\/style>/gi, ' ').replace(/<[^>]+>/g, ' ') : text;
+    for (const [rule, pattern] of copyRules) {
+      if (pattern.test(copy)) throw new Error(`${rule}: ${file}`);
+    }
   }
 }
 

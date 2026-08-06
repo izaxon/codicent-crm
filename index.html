@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'; connect-src 'none'; form-action 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'">
+  <title>Codicent CRM AI — enklare kundarbete</title>
+  <meta name="description" content="Samla kundbild, säljaktiviteter och nästa steg i ett enkelt CRM med trygg AI-hjälp.">
+  <meta property="og:title" content="Codicent CRM AI — enklare kundarbete">
+  <meta property="og:description" content="Mer kundtid. Mindre administration. Tydliga nästa steg för hela teamet.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://crm.codicent.ai/">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://crm.codicent.ai/">
+  <style>
+    :root{color-scheme:dark;--bg:#05070d;--surface:rgba(19,23,35,.82);--line:rgba(255,255,255,.1);--text:#f7f8fc;--muted:#a8b0c1;--accent:#12d8b5;--soft:rgba(18,216,181,.13);--violet:#8588ff}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-width:320px;overflow-x:hidden;background:radial-gradient(circle at 8% 8%,rgba(18,216,181,.13),transparent 28rem),radial-gradient(circle at 94% 18%,rgba(133,136,255,.13),transparent 26rem),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}a{color:inherit}.shell{width:min(1120px,calc(100% - 40px));margin:0 auto}
+    .nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-weight:720;letter-spacing:-.02em}.brand-mark{width:38px;height:38px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.14);border-radius:12px;background:linear-gradient(145deg,#353a57,#151927);box-shadow:inset 0 1px rgba(255,255,255,.08);color:var(--accent)}.brand small{display:block;margin-top:-2px;color:var(--muted);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+    .button{display:inline-flex;min-height:46px;align-items:center;justify-content:center;padding:0 21px;border:1px solid transparent;border-radius:999px;background:var(--accent);color:#04100e;font-size:15px;font-weight:750;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease}.button:hover{transform:translateY(-2px);box-shadow:0 13px 34px rgba(18,216,181,.2)}.button:focus-visible{outline:3px solid rgba(18,216,181,.35);outline-offset:3px}
+    .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(420px,.86fr);gap:clamp(48px,8vw,92px);align-items:center;min-height:650px;padding:68px 0 96px}.eyebrow{display:inline-flex;align-items:center;gap:9px;margin:0 0 22px;color:#c8cfdd;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 6px rgba(18,216,181,.1)}h1{max-width:680px;margin:0;font-size:clamp(48px,6vw,78px);line-height:.99;letter-spacing:-.055em}.hero-copy{max-width:590px;margin:28px 0 34px;color:var(--muted);font-size:clamp(18px,2vw,21px)}.hero-note{margin:18px 0 0;color:#7f899d;font-size:13px}
+    .product{position:relative;padding:14px;border:1px solid var(--line);border-radius:28px;background:rgba(10,13,21,.72);box-shadow:0 28px 80px rgba(0,0,0,.42);transform:rotate(1deg)}.product::before{content:"";position:absolute;inset:-48px;z-index:-1;border-radius:50%;background:radial-gradient(circle,rgba(18,216,181,.16),transparent 68%);filter:blur(12px)}.app{overflow:hidden;border:1px solid rgba(255,255,255,.08);border-radius:19px;background:#10141f}.app-bar{display:flex;align-items:center;justify-content:space-between;padding:14px 17px;border-bottom:1px solid var(--line);color:#aeb7c8;font-size:12px}.dots{display:flex;gap:5px}.dots span{width:7px;height:7px;border-radius:50%;background:#3a4050}.dots span:first-child{background:var(--accent)}.customer{padding:22px}.customer-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:22px}.label{color:#778197;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.customer h2{margin:5px 0 0;font-size:22px;letter-spacing:-.02em}.status{padding:6px 10px;border-radius:999px;background:var(--soft);color:#78f5df;font-size:11px;font-weight:700}
+    .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.mini-card{min-height:92px;padding:14px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.035)}.mini-card strong{display:block;margin-top:7px;font-size:14px;line-height:1.35}.mini-card span{color:#7f899d;font-size:11px}.activity{display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:center;margin-top:11px;padding:13px 14px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.035)}.activity-icon{width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:rgba(133,136,255,.14);color:#afb1ff;font-weight:700}.activity strong{display:block;font-size:13px}.activity span{color:#7f899d;font-size:11px}.activity time{color:#778197;font-size:10px}.assistant{margin-top:11px;padding:15px;border:1px solid rgba(18,216,181,.18);border-radius:14px;background:linear-gradient(135deg,rgba(18,216,181,.08),rgba(133,136,255,.06))}.assistant p{margin:7px 0 12px;color:#dce3ee;font-size:13px}.suggestion{display:inline-block;padding:7px 10px;border-radius:9px;background:rgba(255,255,255,.08);color:#cbd3e0;font-size:11px}
+    .outcomes{padding:102px 0;border-top:1px solid var(--line)}.section-intro{max-width:640px;margin-bottom:54px}.section-intro h2{margin:0;font-size:clamp(34px,4.5vw,55px);line-height:1.07;letter-spacing:-.045em}.section-intro p{margin:18px 0 0;color:var(--muted);font-size:18px}.outcome-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.outcome{min-height:250px;padding:28px;border:1px solid var(--line);border-radius:22px;background:var(--surface)}.number{color:var(--accent);font-size:13px;font-weight:800;letter-spacing:.12em}.outcome h3{margin:68px 0 10px;font-size:23px;line-height:1.16;letter-spacing:-.025em}.outcome p{margin:0;color:var(--muted);font-size:15px}
+    .trust{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;margin:12px 0 112px;padding:58px;border:1px solid rgba(18,216,181,.16);border-radius:28px;background:linear-gradient(130deg,rgba(18,216,181,.08),rgba(133,136,255,.06))}.trust h2{margin:0;font-size:clamp(34px,4vw,50px);line-height:1.06;letter-spacing:-.04em}.trust-copy{display:grid;gap:16px}.trust-copy p{margin:0;padding-left:17px;border-left:2px solid var(--accent);color:#c6cedb;font-size:16px}.cta{padding:96px 20px 110px;border-top:1px solid var(--line);text-align:center}.cta h2{max-width:740px;margin:0 auto 18px;font-size:clamp(38px,5vw,64px);line-height:1.04;letter-spacing:-.05em}.cta p{margin:0 auto 30px;color:var(--muted);font-size:18px}footer{display:flex;justify-content:space-between;gap:24px;padding:26px 0 38px;border-top:1px solid var(--line);color:#778197;font-size:12px}
+    @media(max-width:900px){.hero{grid-template-columns:1fr;min-height:auto;padding-top:58px}.product{width:min(100%,560px);margin:0 auto;transform:none}.outcome-grid{grid-template-columns:1fr}.outcome{min-height:210px}.outcome h3{margin-top:42px}.trust{grid-template-columns:1fr;gap:34px;padding:42px}}
+    @media(max-width:560px){.shell{width:min(100% - 28px,1120px)}.nav{min-height:72px}.nav .button{min-height:40px;padding:0 15px;font-size:13px}.brand small{display:none}.hero{gap:48px;padding:50px 0 74px}h1{font-size:clamp(43px,14vw,61px)}.hero-copy{margin-top:22px}.product{padding:8px;border-radius:22px}.product::before{inset:-10px}.customer{padding:17px}.customer h2{font-size:19px}.mini-grid{grid-template-columns:1fr}.activity{grid-template-columns:34px 1fr}.activity time{display:none}.outcomes{padding:76px 0}.section-intro{margin-bottom:36px}.trust{margin-bottom:82px;padding:30px 24px}.cta{padding:74px 14px 86px}footer{flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
+  </style>
+</head>
+<body>
+  <header class="shell nav">
+    <a class="brand" href="#top" aria-label="Codicent CRM AI, till startsidan"><span class="brand-mark" aria-hidden="true">C</span><span>Codicent CRM AI<small>Enklare kundarbete</small></span></a>
+    <a class="button" href="mailto:info@codicent.com?subject=Codicent%20CRM%20AI">Boka ett samtal</a>
+  </header>
+  <main id="top">
+    <section class="shell hero" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">Praktiskt CRM för säljteam</p>
+        <h1 id="hero-title">Mer kundtid.<br>Mindre admin.</h1>
+        <p class="hero-copy">Samla kundbild, aktiviteter och nästa steg på ett ställe. Låt AI hjälpa till när det sparar tid — och låt teamet behålla kontrollen.</p>
+        <a class="button" href="mailto:info@codicent.com?subject=Visa%20Codicent%20CRM%20AI">Visa hur det fungerar</a>
+        <p class="hero-note">Anpassas efter hur ert team faktiskt arbetar.</p>
+      </div>
+      <div class="product" aria-label="Illustration av en kundöversikt">
+        <div class="app">
+          <div class="app-bar"><div class="dots" aria-hidden="true"><span></span><span></span><span></span></div><span>Kundöversikt</span><span>Idag</span></div>
+          <div class="customer">
+            <div class="customer-head"><div><span class="label">Kund</span><h2>Aktuell kunddialog</h2></div><span class="status">Pågående</span></div>
+            <div class="mini-grid">
+              <div class="mini-card"><span>Senaste kontakt</span><strong>Möte sammanfattat</strong><span>i går</span></div>
+              <div class="mini-card"><span>Nästa steg</span><strong>Skicka uppföljning</strong><span>senast fredag</span></div>
+            </div>
+            <div class="activity"><div class="activity-icon" aria-hidden="true">✓</div><div><strong>Ny aktivitet sparad</strong><span>Anteckning och ansvarig är synliga för teamet</span></div><time>10:24</time></div>
+            <div class="assistant"><span class="label">AI-hjälp</span><p>Vill du ha ett kort förslag på uppföljning?</p><span class="suggestion">Förbered utkast</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="shell outcomes" aria-labelledby="outcome-title">
+      <div class="section-intro"><p class="eyebrow">Det viktiga, samlat</p><h2 id="outcome-title">Ett tydligare sätt att hålla kundarbetet i rörelse.</h2><p>Kort väg från samtal till ansvar, uppföljning och nästa affärsmöjlighet.</p></div>
+      <div class="outcome-grid">
+        <article class="outcome"><span class="number">01</span><h3>Se hela kundbilden</h3><p>Kontakter, aktiviteter och relaterad information i en gemensam vy.</p></article>
+        <article class="outcome"><span class="number">02</span><h3>Fånga det som hände</h3><p>Spara möten, samtal och anteckningar medan de fortfarande är färska.</p></article>
+        <article class="outcome"><span class="number">03</span><h3>Gör nästa steg tydligt</h3><p>Se vad som ska göras, när det ska ske och vem som tar det vidare.</p></article>
+      </div>
+    </section>
+    <section class="shell trust" aria-labelledby="trust-title">
+      <div><p class="eyebrow">AI med tydliga gränser</p><h2 id="trust-title">Hjälpsam.<br>Inte ansvarig.</h2></div>
+      <div class="trust-copy"><p>AI kan sammanfatta kunddialoger och förbereda nästa steg.</p><p>Teamet väljer vad som används och vad som sparas.</p><p>Åtkomst följer projektet och dess medlemmar.</p></div>
+    </section>
+    <section class="cta" aria-labelledby="cta-title"><p class="eyebrow">Codicent CRM AI</p><h2 id="cta-title">Börja med ert viktigaste kundflöde.</h2><p>Vi visar en enkel version utifrån er vardag.</p><a class="button" href="mailto:info@codicent.com?subject=Boka%20CRM%20AI-demo">Boka en kort demo</a></section>
+  </main>
+  <footer class="shell"><span>© Codicent Inside AB 2026</span><a href="mailto:info@codicent.com">info@codicent.com</a></footer>
+</body>
+</html>

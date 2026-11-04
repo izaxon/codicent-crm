@@ -32,13 +32,13 @@ for (const file of expectedFiles) {
 
 const html = readFileSync(resolve(root, 'index.html'), 'utf8');
 for (const value of [
-  '<html lang="sv">',
+  '<html lang="en">',
   '<title>Codicent CRM AI',
-  'Kundkortet som håller affären i rörelse.',
-  'Det här får ni',
-  'Aktiviteter och uppföljning',
-  'Offerter, service och dokument',
-  'AI-stöd i rätt sammanhang',
+  'The customer card that keeps the deal moving.',
+  'What you get',
+  'Activities and follow-up',
+  'Quotations, service and documents',
+  'AI support in the right context',
   'mailto:info@codicent.com',
 ]) {
   if (!html.includes(value)) throw new Error('RULE-CONTENT-REQUIRED');
@@ -59,7 +59,7 @@ const rules = [
 ];
 const copyRules = [
   ['RULE-UNVERIFIED-METRIC', /\b\d+(?:[.,]\d+)?\s*(?:%|x|×)(?=\s|[.,;:!?<]|$)/i],
-  ['RULE-UNVERIFIED-ABSOLUTE', /\b(?:garanterad|alltid|aldrig|automatiskt|realtid|gdpr|krypterad)\b/i],
+  ['RULE-UNVERIFIED-ABSOLUTE', /\b(?:garanterad|alltid|aldrig|automatiskt|realtid|gdpr|krypterad|guaranteed|always|never|automatically|real-?time|encrypted)\b/i],
 ];
 for (const file of publishedFiles) {
   const text = readFileSync(resolve(root, file), 'utf8').normalize('NFKC');
